@@ -425,7 +425,7 @@ After that you can start pulling metryv images on <a href="https://hub.docker.co
   </tbody>
 </table>
 
-<p>There are eight repositories containing images on dockerhub, commands witten on brackets[ ], are optional</p>
+<p>There are eight repositories containing images on dockerhub, commands witten on brackets [ ], are optional</p>
 <li>Api</li>
 <pre><code>docker pull [OPTIONS] metryv/api[:TAG|@DIGEST]
 </code></pre>
@@ -451,9 +451,9 @@ After that you can start pulling metryv images on <a href="https://hub.docker.co
 <pre><code>docker pull [OPTIONS] metryv/dashboard[:TAG|@DIGEST]
 </code></pre>
 <h2 id="docker-compose">Docker Compose</h2>
-<p>Docker compose is used to run</p>
+<p>Docker compose is used to build and run</p>
 <li>Backend part contianing api,psi,chat_server and ping</li>
-<li>Crons server contianing api-crons and psi-crons, setting the crons variable on .env to "crons"</li>
+<li>Crons server contianing api-crons and psi-crons. Make sure to set the crons variable on .env to "crons"</li>
 <li>Frontend with dashboard and suggestions</li>
 
 <p>Docker compose files are in each repo</p>

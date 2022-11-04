@@ -450,17 +450,17 @@
 <h1 id="setting-up-the-project">Setting up the project</h1>
 <h2 id="tech-stack">Tech Stack</h2>
 <p>The technology stack used in metryv is mostly <code>MERN</code> Stack (MongoDB, Express.js, React.js, Node.js).<br />
-<code>MongoDB</code> is used as a database where all the data is stored, it consists of 9 collections. We use seperate databases for live and development enviroments.<br />
+<code>MongoDB</code> is used as a database where all the data is stored, it consists of 9 collections. We use seperate databases for production and development enviroments.<br />
 <code>Node.js</code> a javascript runtime enviroment and <code>Express.js</code> framework are used in the backend part of this application with microservice architecture.<br />
 <code>React.js</code> a javascript library is used on frontend togethere with a template <a href="https://designrevision.com/downloads/shards-dashboard-lite-react/"><code>Shards Dashboard Lite React</code></a> and <a href="https://redux.js.org/"><code>React Redux Core</code></a> a state managment tool.<br />
 On payments metryv uses a library by paysera: <a href="https://github.com/paysera/lib-webtopay"><code>webtopay</code></a> created with <code>PHP</code> and the
 metryv landing page <a href="https://metryv.com/"><code>metryv.com</code></a> is created with <code>wordpress/PHP</code>.<br />
-<code>Docker</code> is used to create containers along with <code>docker-compose</code> to start all of the containers</p>
+<code>Docker</code> is used to create containers along with <code>docker-compose</code> to build and start containers</p>
 <h2 id="node-js-npm">Node js &amp; npm</h2>
 <p>First thing you will need to do is installing node.js on your machine [<a href="https://nodejs.org/ru/blog/release/v16.13.0/"><code>node 16.13.0</code></a> or later LTS versions], along with installing nodejs you will also need npm package manger tool to install the project dependecies</p>
 <h2 id="xamp-and-worpress">Xamp and Worpress</h2>
 <p>Install <a href="https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/8.0.18/"><code>Xamp version 8.0.18-0</code></a> and <a href="https://wordpress.org/download/"><code>Wrodpress</code></a> to run landing page <a href="https://metryv.com"><code>metryv.com</code></a> and payments service on backend<br />
-After git cloning payments and landing page, save their folders on /opt/lampp/htdocs and rename them to payment and metryv.</p>
+After git cloning payments and landing page, save their folders on <code>/opt/lampp/htdocs</code> and rename them to <code>payment</code> and <code>metryv</code>.</p>
 <h2 id="gitlab-repos">Gitlab Repos</h2>
 <p>There are four git repos of metryv</p>
 <li>MetryV Back</li>

@@ -476,17 +476,16 @@ First you'll need to install all npm install packages on all four services by ru
     <tr>
       <td><b>Crons</b></td>
       <td>"start:crons":</td>
-      <td>"NODE_ENV=crons node --max-old-space-size=4096 index.js"</td>
+      <td>"NODE_ENV=crons node --max-old-space-size=4096 --no-warnings index.js"</td>
     </tr>
   </tbody>
 </table>
 
 <p><code>nodemon:</code> is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.<br />
-<code>NODE_ENV:</code> will declare the node_env variable on .env file<br />
+<code>NODE_ENV:</code> will declare the node_env variable on .env file and will start the app in that environment<br />
 <code>--max-old-space-size:</code> By default, the memory limit in Node. js is 512 MB. To increase this amount, you need to set the memory limit argument —-max-old-space-size . It will help avoid a memory limit issue.<br />
 <code>--no-warnings:</code> disables warnings in node js</p>
-<p>This command will start the backend of metryv on your machine.<br />
-Ports and env variables are specified on the table below for each enviroment</p>
+<p>Ports and env variables are specified on the table below for each enviroment</p>
 <table>
   <thead>
   <tr>
@@ -553,9 +552,8 @@ First you will need to npm install all npm packages each service by running</p>
   </tbody>
 </table>
 
-<p><code>env-cmd -f .env.local|development|production:</code> A simple node program for executing commands using an environment from an env file. <code>-f</code> determines which file</p>
-<p>These commands will start the front metryv on your machine.<br />
-Ports and env variables are specified on the table below for each container</p>
+<p><code>env-cmd -f .env.local|development|production:</code> A simple node program for executing commands using an environment from an env file. <code>-f</code> determines which .env file to process on that enviroment</p>
+<p>Ports and env variables are specified on the table below for each container</p>
 <table>
   <thead>
   <tr>
