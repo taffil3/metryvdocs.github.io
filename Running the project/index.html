@@ -109,7 +109,20 @@
         
           
           
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
           
         
       </form>
@@ -305,8 +318,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Database/" class="md-nav__link">
-        Database
+      <a href="../API%27s/" class="md-nav__link">
+        API's
       </a>
     </li>
   
@@ -320,38 +333,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../API%20Routes/" class="md-nav__link">
-        API Routes
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Dependecies/" class="md-nav__link">
-        Dependecies
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Release/" class="md-nav__link">
-        Release
+      <a href="../On%20Release/" class="md-nav__link">
+        On Release
       </a>
     </li>
   
@@ -466,10 +449,43 @@
 <h3 id="npm">Npm</h3>
 <h4 id="metryv-back">MetryV Back</h4>
 <p>There are four microservices and you should run them seperatly with npm.
-First you'll need to install all npm packages on all four services by running</p>
-<pre><code>npm install &amp;&amp; npm start
+First you'll need to install all npm install packages on all four services by running</p>
+<pre><code>npm install
 </code></pre>
-<p>on each microservice path. These commands will start the backend of metryv on your machine.<br />
+<p>than you'll start the servers by running</p>
+<pre><code>npm start
+</code></pre>
+<p>that will run the command declared on package.json for each microservice</p>
+<table>
+  <tbody>
+    <tr>
+      <td><b>Local</b></td>
+      <td>"start":</td>
+      <td>"nodemon index.js"</td>
+    </tr>
+    <tr>
+      <td><b>Development</b></td>
+      <td>"start:development":</td>
+      <td>"NODE_ENV=development node --max-old-space-size=4096 index.js"</td>
+    </tr>
+    <tr>
+      <td><b>Production</b></td>
+      <td>"start:production":</td>
+      <td>"NODE_ENV=production node --max-old-space-size=4096 index.js"</td>
+    </tr>
+    <tr>
+      <td><b>Crons</b></td>
+      <td>"start:crons":</td>
+      <td>"NODE_ENV=crons node --max-old-space-size=4096 index.js"</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code>nodemon:</code> is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.<br />
+<code>NODE_ENV:</code> will declare the node_env variable on .env file<br />
+<code>--max-old-space-size:</code> By default, the memory limit in Node. js is 512 MB. To increase this amount, you need to set the memory limit argument —-max-old-space-size . It will help avoid a memory limit issue.<br />
+<code>--no-warnings:</code> disables warnings in node js</p>
+<p>This command will start the backend of metryv on your machine.<br />
 Ports and env variables are specified on the table below for each enviroment</p>
 <table>
   <thead>
@@ -510,10 +526,35 @@ Ports and env variables are specified on the table below for each enviroment</p>
 
 <h4 id="metryv-front">MetryV Front</h4>
 <p>There are two services and you should run them seperatly with npm.
-First you will need to install all npm packages each service by running</p>
-<pre><code>npm install &amp;&amp; npm start
+First you will need to npm install all npm packages each service by running</p>
+<pre><code>npm install
 </code></pre>
-<p>These commands will start the front containers: <code>dashboard</code> and <code>suggestions</code> of metryv on your machine.<br />
+<p>than you'll start dashboard and suggestions by running</p>
+<pre><code>npm start
+</code></pre>
+<p>that will run the command decalred on package.json for suggestions and dashboard</p>
+<table>
+  <tbody>
+    <tr>
+      <td><b>Local</b></td>
+      <td>"start":</td>
+      <td>"env-cmd -f .env.local react-scripts start"</td>
+    </tr>
+    <tr>
+      <td><b>Development</b></td>
+      <td>"start:development":</td>
+      <td>"env-cmd -f .env.development react-scripts start"</td>
+    </tr>
+    <tr>
+      <td><b>Production</b></td>
+      <td>"start:production":</td>
+      <td>"env-cmd -f .env.production react-scripts start"</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code>env-cmd -f .env.local|development|production:</code> A simple node program for executing commands using an environment from an env file. <code>-f</code> determines which file</p>
+<p>These commands will start the front metryv on your machine.<br />
 Ports and env variables are specified on the table below for each container</p>
 <table>
   <thead>
@@ -541,6 +582,7 @@ Ports and env variables are specified on the table below for each container</p>
 </table>
 
 <h4 id="xamp">Xamp</h4>
+<p>Run xamp and click on start all to be able to use metryv payments locally or metryv landing page</p>
 <table>
   <thead>
   <tr>
@@ -559,9 +601,9 @@ Ports and env variables are specified on the table below for each container</p>
     </tr>
     <tr>
       <td>METRYV</td>
+      <td>http://localhost/metryv/</td>
       <td></td>
-      <td></td>
-      <td></td>
+      <td>https://metryv.com/</td>
     </tr>
   </tbody>
 </table>
@@ -601,13 +643,13 @@ Ports and env variables are specified on the table below for each container</p>
       
       
         
-        <a href="../Database/" class="md-footer__link md-footer__link--next" aria-label="Next: Database" rel="next">
+        <a href="../API%27s/" class="md-footer__link md-footer__link--next" aria-label="Next: API&#39;s" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Database
+              API's
             </div>
           </div>
           <div class="md-footer__button md-icon">

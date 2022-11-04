@@ -109,7 +109,20 @@
         
           
           
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
           
         
       </form>
@@ -237,8 +250,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Database/" class="md-nav__link">
-        Database
+      <a href="../API%27s/" class="md-nav__link">
+        API's
       </a>
     </li>
   
@@ -252,38 +265,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../API%20Routes/" class="md-nav__link">
-        API Routes
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Dependecies/" class="md-nav__link">
-        Dependecies
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Release/" class="md-nav__link">
-        Release
+      <a href="../On%20Release/" class="md-nav__link">
+        On Release
       </a>
     </li>
   
@@ -423,8 +406,57 @@
 
 
 <h1 id="docker">Docker</h1>
+<p>Optionally you can run metryv from docker. First of all install docker on your machine through <a href="https://docs.docker.com/engine/install/"><code>installation guide</code></a> on docker documentation.<br />
+After that you can start pulling metryv images on <a href="https://hub.docker.com/"><code>docker hub</code></a></p>
 <h2 id="docker-hub">Docker hub</h2>
+<p>Docker hub account</p>
+<table>
+  <thead>
+  <tr>
+    <th>Username</th>
+    <th>Password</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Metryv</td>
+      <td class="password">Starlabs123321@</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>There are eight repositories containing images on dockerhub, commands witten on brackets[ ], are optional</p>
+<li>Api</li>
+<pre><code>docker pull [OPTIONS] metryv/api[:TAG|@DIGEST]
+</code></pre>
+<li>Psi</li>
+<pre><code>docker pull [OPTIONS] metryv/psi[:TAG|@DIGEST]
+</code></pre>
+<li>Ping</li>
+<pre><code>docker pull [OPTIONS] metryv/ping[:TAG|@DIGEST]
+</code></pre>
+<li>Chat Server</li>
+<pre><code>docker pull [OPTIONS] metryv/chatbot[:TAG|@DIGEST]
+</code></pre>
+<li>Psi-Crons</li>
+<pre><code>docker pull [OPTIONS] metryv/psi-crons[:TAG|@DIGEST]
+</code></pre>
+<li>Api-Crons</li>
+<pre><code>docker pull [OPTIONS] metryv/api-crons[:TAG|@DIGEST]
+</code></pre>
+<li>Suggestions</li>
+<pre><code>docker pull [OPTIONS] metryv/suggestions[:TAG|@DIGEST]
+</code></pre>
+<li>Dashboard</li>
+<pre><code>docker pull [OPTIONS] metryv/dashboard[:TAG|@DIGEST]
+</code></pre>
 <h2 id="docker-compose">Docker Compose</h2>
+<p>Docker compose is used to run</p>
+<li>Backend part contianing api,psi,chat_server and ping</li>
+<li>Crons server contianing api-crons and psi-crons, setting the crons variable on .env to "crons"</li>
+<li>Frontend with dashboard and suggestions</li>
+
+<p>Docker compose files are in each repo</p>
 <p>Run this command to build the Docker images:</p>
 <pre><code>docker-compose up -d --build
 </code></pre>
@@ -438,6 +470,15 @@
 <pre><code>docker-compose up -d
 </code></pre>
 <p>After you run docker-compose, you can check the project in <code>localhost</code> on your machine.</p>
+<script>
+    const targetElements = document.getElementsByClassName("password");
+    for(const element of targetElements){
+      element.style.filter = "blur(4px)";
+      element.addEventListener("click", (el) => {
+        el.target.style.filter = "blur(0px)";
+      })
+    }
+</script>
 
 
 
@@ -458,7 +499,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../Release/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Release" rel="prev">
+        <a href="../On%20Release/" class="md-footer__link md-footer__link--prev" aria-label="Previous: On Release" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -467,7 +508,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Release
+              On Release
             </div>
           </div>
         </a>
