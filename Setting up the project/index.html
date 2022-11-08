@@ -288,6 +288,53 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#eslint-prettier" class="md-nav__link">
+    EsLint &amp; Prettier
+  </a>
+  
+    <nav class="md-nav" aria-label="EsLint &amp; Prettier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backend-setup" class="md-nav__link">
+    Backend setup:
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend setup:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eslint" class="md-nav__link">
+    ESLint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prettier" class="md-nav__link">
+    Prettier
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-setup" class="md-nav__link">
+    Frontend setup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -319,8 +366,23 @@
   
   
     <li class="md-nav__item">
-      <a href="../API%27s%20and%20Packages/" class="md-nav__link">
-        API's and Packages
+      <a href="../Google%20Developer%20Console/" class="md-nav__link">
+        Google Developer Console
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Packages/" class="md-nav__link">
+        Packages
       </a>
     </li>
   
@@ -432,6 +494,53 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#eslint-prettier" class="md-nav__link">
+    EsLint &amp; Prettier
+  </a>
+  
+    <nav class="md-nav" aria-label="EsLint &amp; Prettier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backend-setup" class="md-nav__link">
+    Backend setup:
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend setup:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eslint" class="md-nav__link">
+    ESLint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prettier" class="md-nav__link">
+    Prettier
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-setup" class="md-nav__link">
+    Frontend setup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -452,7 +561,7 @@
 <p>The technology stack used in metryv is mostly <code>MERN</code> Stack (MongoDB, Express.js, React.js, Node.js).<br />
 <code>MongoDB</code> is used as a database where all the data is stored, it consists of 9 collections. We use seperate databases for production and development enviroments.<br />
 <code>Node.js</code> a javascript runtime enviroment and <code>Express.js</code> framework are used in the backend part of this application with microservice architecture.<br />
-<code>React.js</code> a javascript library is used on frontend togethere with a template <a href="https://designrevision.com/downloads/shards-dashboard-lite-react/"><code>Shards Dashboard Lite React</code></a> and <a href="https://redux.js.org/"><code>React Redux Core</code></a> a state managment tool.<br />
+<a href="https://reactjs.org/"><code>React.js 17.0.2</code></a> a javascript library is used on frontend togethere with a template <a href="https://designrevision.com/downloads/shards-dashboard-lite-react/"><code>Shards Dashboard Lite React</code></a> and <a href="https://redux.js.org/"><code>React Redux Core</code></a> a state managment tool.<br />
 On payments metryv uses a library by paysera: <a href="https://github.com/paysera/lib-webtopay"><code>webtopay</code></a> created with <code>PHP</code> and the
 metryv landing page <a href="https://metryv.com/"><code>metryv.com</code></a> is created with <code>wordpress/PHP</code>.<br />
 <code>Docker</code> is used to create containers along with <code>docker-compose</code> to build and start containers</p>
@@ -518,6 +627,67 @@ After git cloning payments and landing page, save their folders on <code>/opt/la
     </tr>
   </tbody>
 </table>
+
+<h2 id="eslint-prettier">EsLint &amp; Prettier</h2>
+<p>ESLint statically analyzes your code to quickly find problems. It is built into most text editors and you can run ESLint as part of your continuous integration pipeline.</p>
+<h3 id="backend-setup">Backend setup:</h3>
+<h4 id="eslint"><code>ESLint</code></h4>
+<pre><code>{
+  "root": true,
+  "parserOptions": {
+      "ecmaVersion": 12,
+      "sourceType": "module"
+  },
+  "extends": ["eslint:recommended", "prettier"],
+  "env": {
+      "es2021": true,
+      "node": true
+  }
+}
+</code></pre>
+<p>Specifying Parser Options:<br />
+<code>parserOptions</code> ESLint allows you to specify the JavaScript language options you want to support. We use ECMAScript 12 syntax and source type module.  </p>
+<p>Extends ESLint Recommended and Prettier:<br />
+<code>eslint:recommended</code> This means we use the eslint recommended rules, check them out <a href="https://github.com/eslint/eslint/blob/main/conf/eslint-recommended.js"><code>here</code></a>.<br />
+Turns off all rules that are unnecessary or might conflict with Prettier.</p>
+<p><code>prettier</code> This lets you use your favorite shareable config without letting its stylistic choices get in the way when using Prettier.
+Note that this config only turns rules off, so it only makes sense using it together with some other config.</p>
+<h4 id="prettier"><code>Prettier</code></h4>
+<pre><code>{
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": true
+}
+</code></pre>
+<p>Trailing Commas:<br />
+Print trailing commas wherever possible in multi-line comma-separated syntactic structures. (A single-line array, for example, never gets trailing commas.).<br />
+<code>trailingComma: es5</code> - Trailing commas where valid in ES5 (objects, arrays, etc.). No trailing commas in type parameters in TypeScript.</p>
+<p>Tab Width:<br />
+Specify the number of spaces per indentation-level.<br />
+<code>tabWidth: 4</code> - sets the tab width to 4 spaces</p>
+<p>Semicolons:<br />
+Print semicolons at the ends of statements.<br />
+<code>semi: true</code>, adds a semicolon at the end of every statement.</p>
+<h3 id="frontend-setup">Frontend setup</h3>
+<p>We use a npm package <a href="https://www.npmjs.com/package/eslint-plugin-react"><code>esling-plugin-react</code></a></p>
+<pre><code>"extends": [
+   "eslint:recommended",
+   "plugin:react/recommended"
+ ]
+ rules: {
+ "prettier/prettier": [
+   "error",
+   {
+     endOfLine: "auto",
+   },
+ ],
+ "react/prop-types": 0,
+ "linebreak-style": 0,
+ "arrow-body-style": "off",
+ "prefer-arrow-callback": "off",
+},
+</code></pre>
+<p>You are ready to use Prettier and ESLint in your project without worrying about any conflicts. ESLint knows about all your Prettier rules by integrating all the rules that are enforced by it and removing all the rules that could conflict with it. Now there shouldn't be anything in your way for an improved code style and structure. If you need to exclude folders/files from your ESLint rules, you can add these in an .eslintignore file.</p>
 
 
 
