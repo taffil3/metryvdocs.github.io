@@ -263,6 +263,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../Paysera/" class="md-nav__link">
+        Paysera
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -299,36 +314,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#redux" class="md-nav__link">
-    Redux
+  <a href="#redux-core-v411" class="md-nav__link">
+    Redux Core (v4.1.1)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#node-cron" class="md-nav__link">
-    Node-cron
+  <a href="#node-cron-v300" class="md-nav__link">
+    Node-cron (v3.0.0)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mailjet" class="md-nav__link">
-    Mailjet
+  <a href="#node-mailjet-v335" class="md-nav__link">
+    Node-Mailjet (v3.3.5)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#json-web-token-jwt" class="md-nav__link">
-    JSON Web Token (JWT)
+  <a href="#jsonwebtoken-v851" class="md-nav__link">
+    Jsonwebtoken (v8.5.1)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#socketio" class="md-nav__link">
-    Socket.io
+  <a href="#socketio-backend-socketio-client-frontend-v451" class="md-nav__link">
+    Socket.io (backend) - Socket.io-client (frontend) (v4.5.1)
   </a>
   
 </li>
@@ -420,36 +435,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#redux" class="md-nav__link">
-    Redux
+  <a href="#redux-core-v411" class="md-nav__link">
+    Redux Core (v4.1.1)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#node-cron" class="md-nav__link">
-    Node-cron
+  <a href="#node-cron-v300" class="md-nav__link">
+    Node-cron (v3.0.0)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mailjet" class="md-nav__link">
-    Mailjet
+  <a href="#node-mailjet-v335" class="md-nav__link">
+    Node-Mailjet (v3.3.5)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#json-web-token-jwt" class="md-nav__link">
-    JSON Web Token (JWT)
+  <a href="#jsonwebtoken-v851" class="md-nav__link">
+    Jsonwebtoken (v8.5.1)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#socketio" class="md-nav__link">
-    Socket.io
+  <a href="#socketio-backend-socketio-client-frontend-v451" class="md-nav__link">
+    Socket.io (backend) - Socket.io-client (frontend) (v4.5.1)
   </a>
   
 </li>
@@ -477,8 +492,17 @@
 
 
 <h1 id="packages">Packages</h1>
-<h2 id="redux">Redux</h2>
-<h2 id="node-cron">Node-cron</h2>
+<h2 id="redux-core-v411">Redux Core (v4.1.1)</h2>
+<p>The Redux core library is available as a package on NPM for use with a module bundler or in a Node application:</p>
+<pre><code>npm install redux
+</code></pre>
+<p>Along with redux we use other packages like:<br />
+<a href="https://www.npmjs.com/package/redux-thunk"><code>redux-thunk (v2.3.0)</code></a>, which allows us to write functions with logic inside, that can interact with Redux's store <code>dispatch</code> and <code>getState</code> methods.<br />
+<a href="https://www.npmjs.com/package/redux-logger"><code>redux-logger (v4.0.0)</code></a>, This library logs actions in developer console, giving traceable stack of user actions.<br />
+<a href="https://www.npmjs.com/package/redux-devtools-extension"><code>redux-devtools-extension (v2.13.9)</code></a> with <a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en"><code>Redux DevTools Extension</code></a>, Redux DevTools for debugging application's state changes.
+The extension provides power-ups for your Redux development workflow. Apart from Redux, it can be used with any other architectures which handle the state.  </p>
+<p>All of these are applies as middlewares in redux store.</p>
+<h2 id="node-cron-v300">Node-cron (v3.0.0)</h2>
 <p>The <a href="https://www.npmjs.com/package/node-cron"><code>node-cron</code></a> module is tiny task scheduler in pure JavaScript for node.js based on GNU crontab. This module allows you to schedule task in node.js using full crontab syntax.</p>
 <pre><code>             ┌────────────── second (optional)
              │ ┌──────────── minute
@@ -491,7 +515,7 @@
              * * * * * *
 cron.schedule("* * * * *", asy.....
 </code></pre>
-<h2 id="mailjet">Mailjet</h2>
+<h2 id="node-mailjet-v335">Node-Mailjet (v3.3.5)</h2>
 <p>The mailjet is the smtp used in metryv, currently is free tier, meaning it can deliver up to 200 emails per day, or 1600 per month.  </p>
 <p>The Mailjet Email API uses your public and secret keys for authentication.</p>
 <table>
@@ -507,12 +531,13 @@ cron.schedule("* * * * *", asy.....
   </tbody>
 </table>
 
-<h2 id="json-web-token-jwt">JSON Web Token (JWT)</h2>
+<h2 id="jsonwebtoken-v851">Jsonwebtoken (v8.5.1)</h2>
 <p>Jsonwebtoken allows us to decode, verify and generate jwt's.<br />
 JWT is used in metryv to authenticate users on login or register, this package is also used in backend middlewares to authenticate api calls.  </p>
 <p>Metryv uses a middleware [<code>validJWTNeeded</code>] to verify the jwt fetched from clients api call on authorization header, this token is then decoded through ("jsonwebtoken").verify(token,secret) function, passing the token and the same secret that was used to create that token.
-The contents are stored on a constant first, then on the request body.  </p>
-<h2 id="socketio">Socket.io</h2>
+The contents are stored on a constant first, then on the request body.<br />
+Checkout this middleware in <code>/middlewares/auth.validation.middleware.js</code></p>
+<h2 id="socketio-backend-socketio-client-frontend-v451">Socket.io (backend) - Socket.io-client (frontend) (v4.5.1)</h2>
 <p>Socket.IO is a library that enables low-latency, bidirectional and event-based communication between a client and a server. It is built on top of the WebSocket protocol and provides additional guarantees like fallback to HTTP long-polling or automatic reconnection.  </p>
 <p>Metryv uses socket io in chat_server microservices</p>
 <h2 id="ping-checkhost">Ping (<a href="https://check-host.net/">CheckHost</a>)</h2>
@@ -522,7 +547,8 @@ The contents are stored on a constant first, then on the request body.  </p>
 <p>Then we check the ping of given url by the client by runing command on bash</p>
 <pre><code>curl -H "Accept: application/json" \ 'https://check-host.net/check-ping?host=&lt;site_url&gt;&lt;&amp;node=....&gt;
 </code></pre>
-<p>After checking the ping we are given a request_id to check the results, with that request_id we make an api call on this url <code>https://check-host.net/check-result/$&lt;request_id&gt;</code> to see all the results</p>
+<p>After checking the ping we are given a request_id to check the results, with that request_id we make an api call on this url <code>https://check-host.net/check-result/$&lt;request_id&gt;</code> to see all the results.  </p>
+<p><code>When releasing on production make sure to install curl on server</code></p>
 <script>
     const targetElements = document.getElementsByClassName("password");
     for(const element of targetElements){
@@ -552,7 +578,7 @@ The contents are stored on a constant first, then on the request body.  </p>
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../Google%20Developer%20Console/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Google Developer Console" rel="prev">
+        <a href="../Paysera/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Paysera" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -561,7 +587,7 @@ The contents are stored on a constant first, then on the request body.  </p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Google Developer Console
+              Paysera
             </div>
           </div>
         </a>

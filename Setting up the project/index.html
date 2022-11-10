@@ -268,8 +268,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#xamp-and-worpress" class="md-nav__link">
-    Xamp and Worpress
+  <a href="#xampp-and-worpress" class="md-nav__link">
+    Xampp and Worpress
   </a>
   
 </li>
@@ -381,6 +381,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../Paysera/" class="md-nav__link">
+        Paysera
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Packages/" class="md-nav__link">
         Packages
       </a>
@@ -474,8 +489,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#xamp-and-worpress" class="md-nav__link">
-    Xamp and Worpress
+  <a href="#xampp-and-worpress" class="md-nav__link">
+    Xampp and Worpress
   </a>
   
 </li>
@@ -562,13 +577,13 @@
 <code>MongoDB</code> is used as a database where all the data is stored, it consists of 9 collections. We use seperate databases for production and development enviroments.<br />
 <code>Node.js</code> a javascript runtime enviroment and <code>Express.js</code> framework are used in the backend part of this application with microservice architecture.<br />
 <a href="https://reactjs.org/"><code>React.js 17.0.2</code></a> a javascript library is used on frontend togethere with a template <a href="https://designrevision.com/downloads/shards-dashboard-lite-react/"><code>Shards Dashboard Lite React</code></a> and <a href="https://redux.js.org/"><code>React Redux Core</code></a> a state managment tool.<br />
-On payments metryv uses a library by paysera: <a href="https://github.com/paysera/lib-webtopay"><code>webtopay</code></a> created with <code>PHP</code> and the
+On payments metryv uses a library by paysera: <a href="https://github.com/paysera/lib-webtopay"><code>webtopay</code></a> created with <code>PHP</code>, and the
 metryv landing page <a href="https://metryv.com/"><code>metryv.com</code></a> is created with <code>wordpress/PHP</code>.<br />
 <code>Docker</code> is used to create containers along with <code>docker-compose</code> to build and start containers</p>
 <h2 id="node-js-npm">Node js &amp; npm</h2>
 <p>First thing you will need to do is installing node.js on your machine [<a href="https://nodejs.org/ru/blog/release/v16.13.0/"><code>node 16.13.0</code></a> or later LTS versions], along with installing nodejs you will also need npm package manger tool to install the project dependecies</p>
-<h2 id="xamp-and-worpress">Xamp and Worpress</h2>
-<p>Install <a href="https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/8.0.18/"><code>Xamp version 8.0.18-0</code></a> and <a href="https://wordpress.org/download/"><code>Wrodpress</code></a> to run landing page <a href="https://metryv.com"><code>metryv.com</code></a> and payments service on backend<br />
+<h2 id="xampp-and-worpress">Xampp and Worpress</h2>
+<p>Install <a href="https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/8.0.18/"><code>Xampp version 8.0.18-0</code></a> and <a href="https://wordpress.org/download/"><code>Wrodpress</code></a> to run landing page <a href="https://metryv.com"><code>metryv.com</code></a> and payments service on backend<br />
 After git cloning payments and landing page, save their folders on <code>/opt/lampp/htdocs</code> and rename them to <code>payment</code> and <code>metryv</code>.</p>
 <h2 id="gitlab-repos">Gitlab Repos</h2>
 <p>There are four git repos of metryv</p>
@@ -589,7 +604,7 @@ After git cloning payments and landing page, save their folders on <code>/opt/la
 <table>
   <thead>
     <tr>
-      <th>Project</th>
+      <th></th>
       <th>ENV 1</th>
       <th>ENV 2</th>
       <th>ENV 3</th>
@@ -648,8 +663,7 @@ After git cloning payments and landing page, save their folders on <code>/opt/la
 <p>Specifying Parser Options:<br />
 <code>parserOptions</code> ESLint allows you to specify the JavaScript language options you want to support. We use ECMAScript 12 syntax and source type module.  </p>
 <p>Extends ESLint Recommended and Prettier:<br />
-<code>eslint:recommended</code> This means we use the eslint recommended rules, check them out <a href="https://github.com/eslint/eslint/blob/main/conf/eslint-recommended.js"><code>here</code></a>.<br />
-Turns off all rules that are unnecessary or might conflict with Prettier.</p>
+<code>eslint:recommended</code> This means we use the eslint recommended rules, check them out <a href="https://github.com/eslint/eslint/blob/main/conf/eslint-recommended.js"><code>here</code></a>.  </p>
 <p><code>prettier</code> This lets you use your favorite shareable config without letting its stylistic choices get in the way when using Prettier.
 Note that this config only turns rules off, so it only makes sense using it together with some other config.</p>
 <h4 id="prettier"><code>Prettier</code></h4>
@@ -687,7 +701,8 @@ Print semicolons at the ends of statements.<br />
  "prefer-arrow-callback": "off",
 },
 </code></pre>
-<p>You are ready to use Prettier and ESLint in your project without worrying about any conflicts. ESLint knows about all your Prettier rules by integrating all the rules that are enforced by it and removing all the rules that could conflict with it. Now there shouldn't be anything in your way for an improved code style and structure. If you need to exclude folders/files from your ESLint rules, you can add these in an .eslintignore file.</p>
+<p>You are ready to use Prettier and ESLint in your project without worrying about any conflicts. ESLint knows about all your Prettier rules by integrating all the rules that are enforced by it and removing all the rules that could conflict with it. Now there shouldn't be anything in your way for an improved code style and structure. If you need to exclude folders/files from your ESLint rules, you can add these in an .eslintignore file.  </p>
+<p>Any declared unused variable, function, array etc, any not formated code will throw an error and the page will not compile. If we want to disable these rules we use <code>/* eslint-disable */</code> at the top of the file for that whole file, or <code>/* eslint-disable-next-line */</code> for the next line.</p>
 
 
 
